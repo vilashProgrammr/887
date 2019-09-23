@@ -4,7 +4,11 @@ require_once 'Welcome.php';
 // delete condition
 if(isset($_GET['delete_id']))
 {
-	//delete function call
+    //delete function call
+    $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
+	mysqli_query($con,$sql_query);
+    header("Location: $_SERVER[PHP_SELF]");
+
 
 }
 // delete condition
